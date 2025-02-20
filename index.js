@@ -25,7 +25,7 @@ app.get("/", function (req, res) {
 app.use((req, res, next) => {
 	res.header(
 		"Access-Control-Allow-Origin",
-		"https://sugar-cake.vercel.app/"
+		"https://sugar-cake.vercel.app"
 	);
 	res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
 	res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
@@ -40,7 +40,7 @@ const corsOptions = {
 		"http://localhost:5000",
 		"http://localhost:5173",
 		"https://drstore-admin.vercel.app",
-		"https://sugar-cake.vercel.app/",
+		"https://sugar-cake.vercel.app",
 	],
 	methods: ["GET", "POST", "PATCH", "DELETE", "PUT"],
 	allowedHeaders: ["Content-Type", "Authorization"],
