@@ -5,11 +5,11 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js",
-    "server": "nodemon index.js",
-    "build": "src/* dist/",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "start": "node index.js",
+  "server": "nodemon index.js",
+  "test": "echo \"Error: no test specified\" && exit 1"
+}
+,
   "author": "Cikenote",
   "license": "ISC",
   "dependencies": {
