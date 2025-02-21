@@ -12,7 +12,7 @@ export const sendMail = async (data) => {
 	});
 	// send mail with defined transport object
 	const info = await transporter.sendMail({
-		from: '"Ci Store 🛍️ " <danhccse172215@fpt.edu.vn>',
+		from: '"Sugar Silk Cake 🎂" <sugarsilkcake@gmail.com>',
 		to: data.to,
 		subject: data.subject,
 		text: data.text,

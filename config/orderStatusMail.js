@@ -422,22 +422,7 @@ export const orderStatusMail = (orderStatus) => {
                                           color: #926b4a;
                                           font-size: 14px;
                                         "
-                                        ><img
-                                          src="../public/logo.png"
-                                          alt="DR Store"
-                                          style="
-                                            display: block;
-                                            font-size: 14px;
-                                            border: 0;
-                                            outline: none;
-                                            text-decoration: none;
-                                            background: #2cb543;
-                                            padding: 10px;
-                                            border-radius: 5px;
-                                          "
-                                          height="50"
-                                          title="DR Store"
-                                      /></a>
+                                        </a>
                                     </td>
                                   </tr>
                                 </table>
@@ -509,9 +494,7 @@ export const orderStatusMail = (orderStatus) => {
                                           line-height: 36px;
                                           color: #333333;
                                         ">
-                                        Your
-                                        order
-                                        is
+                                        Đơn hàng của bạn là
                                         ${orderStatus}
                                       </h1>
                                     </td>
@@ -538,27 +521,7 @@ export const orderStatusMail = (orderStatus) => {
                                           color: #666666;
                                           font-size: 14px;
                                         ">
-                                        Your
-                                        order
-                                        has
-                                        shipped.
-                                        Here's
-                                        some
-                                        information
-                                        on
-                                        when
-                                        to
-                                        expect
-                                        your
-                                        package
-                                        and
-                                        how
-                                        to
-                                        track
-                                        it
-                                        along
-                                        the
-                                        way.
+                                        Đơn hàng của bạn đã được chuyển đi. Sau đây là một số thông tin về thời điểm nhận hàng và cách theo dõi đơn hàng trong suốt quá trình.
                                       </p>
                                     </td>
                                   </tr>
@@ -693,9 +656,7 @@ export const orderStatusMail = (orderStatus) => {
                                               solid
                                               #666666;
                                           "
-                                          >Track
-                                          Your
-                                          Order</a
+                                          >Theo dõi đơn hàng của bạn</a
                                         ></span
                                       >
                                     </td>
@@ -808,8 +769,7 @@ export const orderStatusMail = (orderStatus) => {
                                           color: #333333;
                                         ">
                                         <b
-                                          >Any
-                                          Questions?</b
+                                          >Bạn có thắc mắc gì không?</b
                                         >
                                       </h2>
                                     </td>
@@ -836,13 +796,7 @@ export const orderStatusMail = (orderStatus) => {
                                           color: #666666;
                                           font-size: 14px;
                                         ">
-                                        For
-                                        everything
-                                        else
-                                        you
-                                        want
-                                        to
-                                        know…
+                                        Còn mọi thứ khác bạn muốn biết…
                                       </p>
                                     </td>
                                   </tr>
@@ -950,8 +904,7 @@ export const orderStatusMail = (orderStatus) => {
                                             border-left-width: 20px;
                                             border-right-width: 20px;
                                           "
-                                          >Delivery
-                                          FAQ</a
+                                          >Câu hỏi thường gặp về giao hàng</a
                                         ></span
                                       >
                                     </td>
@@ -1010,8 +963,7 @@ export const orderStatusMail = (orderStatus) => {
                                             border-left-width: 20px;
                                             border-right-width: 20px;
                                           "
-                                          >Returns
-                                          FAQ</a
+                                          >trả lại Câu hỏi thường gặp</a
                                         ></span
                                       >
                                     </td>
@@ -1106,8 +1058,7 @@ export const orderStatusMail = (orderStatus) => {
                                             border-left-width: 20px;
                                             border-right-width: 20px;
                                           "
-                                          >Order
-                                          FAQ</a
+                                          >Câu hỏi thường gặp về đơn hàng</a
                                         ></span
                                       >
                                     </td>
@@ -1166,9 +1117,7 @@ export const orderStatusMail = (orderStatus) => {
                                             border-left-width: 20px;
                                             border-right-width: 20px;
                                           "
-                                          >Visit
-                                          Customer
-                                          Care</a
+                                          >thăm bộ phận chăm sóc khách hàng</a
                                         ></span
                                       >
                                     </td>
@@ -1325,8 +1274,7 @@ export const orderStatusMail = (orderStatus) => {
                                                   text-decoration: none;
                                                   vertical-align: middle;
                                                   padding-right: 15px;
-                                                " />FREE
-                                              DELIVERY</a
+                                                " />Giao hàng miễn phí</a
                                             >
                                           </td>
                                           <td
@@ -1373,8 +1321,7 @@ export const orderStatusMail = (orderStatus) => {
                                                   text-decoration: none;
                                                   vertical-align: middle;
                                                   padding-right: 15px;
-                                                " />HIGH
-                                              QUALITY</a
+                                                " />Chất lượng cao</a
                                             >
                                           </td>
                                           <td
@@ -1421,8 +1368,7 @@ export const orderStatusMail = (orderStatus) => {
                                                   text-decoration: none;
                                                   vertical-align: middle;
                                                   padding-right: 15px;
-                                                " />BEST
-                                              CHOICE</a
+                                                " />Sự lựa chọn tốt nhất</a
                                             >
                                           </td>
                                         </tr>
@@ -1541,39 +1487,7 @@ export const orderStatusMail = (orderStatus) => {
                                           color: #666666;
                                           font-size: 12px;
                                         ">
-                                        You
-                                        are
-                                        receiving
-                                        this
-                                        email
-                                        because
-                                        you
-                                        have
-                                        visited
-                                        our
-                                        site
-                                        or
-                                        asked
-                                        us
-                                        about
-                                        the
-                                        regular
-                                        newsletter.
-                                        Make
-                                        sure
-                                        our
-                                        messages
-                                        get
-                                        to
-                                        your
-                                        Inbox
-                                        (and
-                                        not
-                                        your
-                                        bulk
-                                        or
-                                        junk
-                                        folders).<br /><a
+                                        Bạn nhận được email này vì bạn đã truy cập trang web của chúng tôi hoặc hỏi chúng tôi về bản tin thường kỳ. Hãy đảm bảo rằng tin nhắn của chúng tôi được gửi đến Hộp thư đến của bạn (và không phải thư mục thư rác hoặc thư mục hàng loạt)..<br /><a
                                           target="_blank"
                                           style="
                                             mso-line-height-rule: exactly;

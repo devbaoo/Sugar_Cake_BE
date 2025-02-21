@@ -48,7 +48,7 @@ export const createUser = async (req, res) => {
 			if (newUser) {
 				let data = {
 					to: email,
-					subject: `Verification Mail from Ci Store`,
+					subject: `Thư xác minh từ Sugar Silk Store`,
 					text: "",
 					html: registerMail(name, newUser?._id),
 				};
@@ -391,11 +391,11 @@ export const forgotPasswordToken = async (req, res) => {
 	try {
 		const token = await user.createPasswordResetToken();
 		await user.save();
-		const resetUrl = `Hi please follow this link to resest your account password, this link is valid for 10 minutes from now <a href="https://drstore.vercel.app/reset-password/${token}">Click Here</a>`;
+		const resetUrl = `Xin chào, vui lòng nhấp vào liên kết sau để đặt lại mật khẩu tài khoản của bạn. Liên kết này có hiệu lực trong 10 phút <a href="https://drstore.vercel.app/reset-password/${token}">Nhấp vào đây</a>`;
 		const data = {
 			to: email,
 			text: "",
-			subject: "Forgot Password Link",
+			subject: "Liên kết đặt lại mật khẩu",
 			html: resetUrl,
 		};
 		sendMail(data);
@@ -558,8 +558,8 @@ export const createOrder = async (req, res) => {
 		if (order) {
 			let data = {
 				to: email,
+				subject: `Email xác thực từ Sugar Silk Cake`,
 				text: "",
-				subject: "Your Order is Successfully Placed!",
 				html: orderMail(name),
 			};
 			sendMail(data);
