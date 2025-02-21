@@ -7,13 +7,13 @@ export const registerMail = (userName, id) => {
       <meta name="x-apple-disable-message-reformatting" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta content="telephone=no" name="format-detection" />
-      <title>Welcome Mail from DR Store</title>
+      <title>Thư chào mừng từ Sugar Silk Cake Store</title>
   
       <link
         href="https://fonts.googleapis.com/css2?family=Imprima&display=swap"
         rel="stylesheet" />
       <style type="text/css">
-        #outlook a {
+        #outlook a {  
           padding: 0;
         }
   
@@ -411,24 +411,7 @@ export const registerMail = (userName, id) => {
                                           color: #2d3142;
                                           font-size: 18px;
                                         "
-                                        ><img
-                                          src="../public/logo.png"
-                                          alt="DR Store"
-                                          style="
-                                            display: block;
-                                            border: 0;
-                                            margin: 0
-                                              auto;
-                                            background: #25901b;
-                                            padding: 10px;
-                                            border-radius: 10px;
-                                            outline: none;
-                                            text-decoration: none;
-                                            -ms-interpolation-mode: bicubic;
-                                          "
-                                          height="50"
-                                          title="DR Store"
-                                      /></a>
+                                        ></a>
                                     </td>
                                   </tr>
                                 </table>
@@ -501,7 +484,7 @@ export const registerMail = (userName, id) => {
                                           font-weight: bold;
                                           color: #2d3142;
                                         ">
-                                        Welcome,
+                                        Chào mừng,
                                         ${userName}&nbsp;
                                       </h3>
                                       <p
@@ -532,20 +515,7 @@ export const registerMail = (userName, id) => {
                                           color: #2d3142;
                                           font-size: 18px;
                                         ">
-                                        You're
-                                        receiving
-                                        this
-                                        message
-                                        because
-                                        you
-                                        recently
-                                        signed
-                                        up
-                                        for
-                                        a
-                                        account.<br /><br />Tap the button below to confirm your email address.
-                                        If you didn't create an account, you can safely
-                                        ignore this email.
+                                        Bạn nhận được tin nhắn này vì bạn vừa đăng ký tài khoản.<br /><br />Nhấn vào nút bên dưới để xác nhận địa chỉ email của bạn. Nếu bạn không tạo tài khoản, bạn có thể bỏ qua email này một cách an toàn.
                                       </p>
                                     </td>
                                   </tr>
@@ -687,9 +657,7 @@ export const registerMail = (userName, id) => {
                                             padding-left: 5px;
                                             padding-right: 5px;
                                           "
-                                          >Click
-                                          to
-                                          Verify Your Mail</a
+                                          >Nhấp để xác minh thư của bạn</a
                                         ></span
                                       >
                                     </td>
@@ -760,8 +728,7 @@ export const registerMail = (userName, id) => {
                                           color: #2d3142;
                                           font-size: 18px;
                                         ">
-                                        Thanks,<br />DR
-                                        Store
+                                        Cảm ơn,<br />Sugar Silk Care Store
                                       </p>
                                     </td>
                                   </tr>

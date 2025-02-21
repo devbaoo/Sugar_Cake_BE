@@ -9,7 +9,7 @@ export const orderMail = (userName) => {
       <meta name="x-apple-disable-message-reformatting" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta content="telephone=no" name="format-detection" />
-      <title>Order Mail from DR Express</title>
+      <title>Đặt hàng từ Sugar Silk Cake Express</title>
       <link
         href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
         rel="stylesheet" />
@@ -442,22 +442,7 @@ export const orderMail = (userName) => {
                                           color: #222222;
                                           font-size: 14px;
                                         "
-                                        ><img
-                                          src="../public/logo.png"
-                                          alt="DR Store"
-                                          style="
-                                            display: block;
-                                            font-size: 16px;
-                                            border: 0;
-                                            outline: none;
-                                            text-decoration: none;
-                                                                                      background: #25901b;
-                                                                                      padding: 10px;
-                                                                                      border-radius: 10px;
-                                          "
-                                          height="45"
-                                          title="Logo"
-                                      /></a>
+                                        </a>
                                     </td>
                                   </tr>
                                 </table>
@@ -557,7 +542,7 @@ export const orderMail = (userName) => {
                                               solid
                                               #6a994e;
                                           "
-                                          >Contact</a
+                                          >Liên hệ</a
                                         ></span
                                     </td>
                                   </tr>
@@ -828,7 +813,7 @@ export const orderMail = (userName) => {
                                           line-height: 29px;
                                           color: #ffffff;
                                         ">
-                                        Hello
+                                        Xin chào
                                         ${userName},
                                       </h3>
                                     </td>
@@ -855,29 +840,7 @@ export const orderMail = (userName) => {
                                           color: #ffffff;
                                           font-size: 16px;
                                         ">
-                                        Thank
-                                        you
-                                        for
-                                        your
-                                        recent
-                                        order.
-                                        We
-                                        are
-                                        pleased
-                                        to
-                                        confirm
-                                        that
-                                        we
-                                        have
-                                        received
-                                        your
-                                        order
-                                        and
-                                        it
-                                        is
-                                        currently
-                                        being
-                                        processed.
+                                        Cảm ơn bạn đã đặt hàng gần đây. Chúng tôi vui mừng xác nhận rằng chúng tôi đã nhận được đơn hàng của bạn và hiện đang được xử lý.
                                       </p>
                                     </td>
                                   </tr>
@@ -935,8 +898,7 @@ export const orderMail = (userName) => {
                                               #6a994e;
                                             border-color: #ffffff;
                                           "
-                                          >View
-                                          Order</a
+                                          >Xem đơn hàng</a
                                         ></span
                                     </td>
                                   </tr>
@@ -1132,7 +1094,7 @@ export const orderMail = (userName) => {
                                           line-height: 29px;
                                           color: #386641;
                                         ">
-                                        Shipping
+                                        Vận chuyển
                                       </h3>
                                       <p
                                         class="b_description"
@@ -1165,9 +1127,7 @@ export const orderMail = (userName) => {
                                           font-size: 16px;
                                         ">
                                         <strong
-                                          >Estimated
-                                          shipping
-                                          times</strong
+                                          >Thời gian vận chuyển ước tính</strong
                                         >
                                       </p>
                                       <ul
@@ -1191,12 +1151,7 @@ export const orderMail = (userName) => {
                                               15px;
                                             font-size: 16px;
                                           ">
-                                          All the world:
-                                          3
-                                          -
-                                          5
-                                          business
-                                          days
+                                          Toàn thế giới: 3 - 5 ngày làm việc
                                           &nbsp;
                                           &nbsp;
                                           &nbsp;
@@ -1212,26 +1167,7 @@ export const orderMail = (userName) => {
                                         </li>
                                         
                                       </ul>
-                                      I'll do
-                                      my best
-                                      to meet
-                                      these
-                                      shipping
-                                      estimates,
-                                      but
-                                      cannot
-                                      guarantee
-                                      them.
-                                      Actual
-                                      delivery
-                                      time
-                                      will
-                                      depend
-                                      on the
-                                      shipping
-                                      method
-                                      you
-                                      choose.<br /><br />
+                                      Tôi sẽ cố gắng hết sức để đáp ứng các ước tính vận chuyển này, nhưng không thể đảm bảo chúng. Thời gian giao hàng thực tế sẽ phụ thuộc vào phương thức vận chuyển bạn chọn.<br /><br />
                                       <p
                                         style="
                                           margin: 0;
@@ -1246,29 +1182,11 @@ export const orderMail = (userName) => {
                                           font-size: 16px;
                                         ">
                                         <strong
-                                          >Customs
-                                          and
-                                          import
-                                          taxes</strong
+                                          >Thuế hải quan và thuế nhập khẩu</strong
                                         >
                                       </p>
-                                      Buyers
-                                      are
-                                      responsible
-                                      for any
-                                      customs
-                                      and
-                                      import
-                                      taxes
-                                      that may
-                                      apply.
-                                      Sellers
-                                      aren't
-                                      responsible
-                                      for
-                                      delays
-                                      due to
-                                      customs.<br /><br />
+                                      Người mua chịu trách nhiệm về bất kỳ khoản thuế hải quan và thuế nhập khẩu nào có thể
+áp dụng. Người bán không chịu trách nhiệm về sự chậm trễ do hải quan.<br /><br />
                                       <h3
                                         style="
                                           margin: 0;
@@ -1283,9 +1201,7 @@ export const orderMail = (userName) => {
                                           line-height: 29px;
                                           color: #386641;
                                         ">
-                                        Returns
-                                        and
-                                        exchanges<br />
+                                        Trả lại và trao đổi<br />
                                       </h3>
                                       <p
                                         style="
@@ -1316,28 +1232,10 @@ export const orderMail = (userName) => {
                                           font-size: 16px;
                                         ">
                                         <strong
-                                          >I
-                                          gladly
-                                          accept
-                                          returns
-                                          and
-                                          exchanges</strong
+                                          >Tôi vui vẻ chấp nhận trả lại và trao đổi</strong
                                         >
                                       </p>
-                                      Just
-                                      contact
-                                      me
-                                      within:
-                                      7 days
-                                      of
-                                      delivery<br />Ship
-                                      returns
-                                      back to
-                                      me
-                                      within:
-                                      14 days
-                                      of
-                                      delivery<br /><br />
+                                      Chỉ cần liên hệ với tôi trong vòng: 7 ngày kể từ ngày giao hàng<br />Tàu sẽ trả lại cho tôi trong vòng: 14 ngày kể từ ngày giao hàng<br /><br />
                                       <p
                                         style="
                                           margin: 0;
@@ -1352,22 +1250,10 @@ export const orderMail = (userName) => {
                                           font-size: 16px;
                                         ">
                                         <strong
-                                          >I
-                                          don't
-                                          accept
-                                          cancellations</strong
+                                          >Tôi không chấp nhận hủy bỏ</strong
                                         >
                                       </p>
-                                      But
-                                      please
-                                      contact
-                                      me if
-                                      you have
-                                      any
-                                      problems
-                                      with
-                                      your
-                                      order.<br /><br />
+                                      Nhưng vui lòng liên hệ với tôi nếu bạn có bất kỳ vấn đề nào với đơn hàng của mình.<br /><br />
                                       <p
                                         style="
                                           margin: 0;
@@ -1382,31 +1268,10 @@ export const orderMail = (userName) => {
                                           font-size: 16px;
                                         ">
                                         <strong
-                                          >The
-                                          following
-                                          items
-                                          can't
-                                          be
-                                          returned
-                                          or
-                                          exchanged</strong
+                                          >Các mặt hàng sau đây không thể được trả lại hoặc đổi</strong
                                         >
                                       </p>
-                                      Because
-                                      of the
-                                      nature
-                                      of these
-                                      items,
-                                      unless
-                                      they
-                                      arrive
-                                      damaged
-                                      or
-                                      defective,
-                                      I can't
-                                      accept
-                                      returns
-                                      for:
+                                      Do tính chất của những mặt hàng này, trừ khi chúng bị hư hỏng hoặc lỗi, tôi không thể chấp nhận trả lại đối với:
                                       <ul
                                         style="
                                           font-family: tahoma,
@@ -1428,10 +1293,7 @@ export const orderMail = (userName) => {
                                               15px;
                                             font-size: 16px;
                                           ">
-                                          Custom
-                                          or
-                                          personalized
-                                          orders
+                                          Đơn hàng tùy chỉnh hoặc cá nhân hóa
                                         </li>
                                         <li
                                           style="
@@ -1441,12 +1303,7 @@ export const orderMail = (userName) => {
                                               15px;
                                             font-size: 16px;
                                           ">
-                                          Perishable
-                                          products
-                                          (like
-                                          food
-                                          or
-                                          flowers)
+                                          Sản phẩm dễ hỏng (như thực phẩm hoặc hoa)
                                         </li>
                                         <li
                                           style="
@@ -1456,8 +1313,7 @@ export const orderMail = (userName) => {
                                               15px;
                                             font-size: 16px;
                                           ">
-                                          Digital
-                                          downloads
+                                          Tải xuống kỹ thuật số
                                         </li>
                                         <li
                                           style="
@@ -1467,9 +1323,7 @@ export const orderMail = (userName) => {
                                               15px;
                                             font-size: 16px;
                                           ">
-                                          Items
-                                          on
-                                          sale
+                                          Các mặt hàng đang được bán
                                         </li>
                                       </ul>
                                       <p
@@ -1486,9 +1340,7 @@ export const orderMail = (userName) => {
                                           font-size: 16px;
                                         ">
                                         <strong
-                                          >Conditions
-                                          of
-                                          return</strong
+                                          >Điều kiện trả lại</strong
                                         >
                                       </p>
                                       <p
@@ -1504,32 +1356,7 @@ export const orderMail = (userName) => {
                                           color: #4d4d4d;
                                           font-size: 16px;
                                         ">
-                                        Buyers
-                                        are
-                                        responsible
-                                        for
-                                        return
-                                        shipping
-                                        costs.
-                                        If
-                                        the
-                                        item
-                                        is
-                                        not
-                                        returned
-                                        in
-                                        its
-                                        original
-                                        condition,
-                                        the
-                                        buyer
-                                        is
-                                        responsible
-                                        for
-                                        any
-                                        loss
-                                        in
-                                        value.
+                                        Người mua chịu trách nhiệm về chi phí vận chuyển trả lại. Nếu sản phẩm không được trả lại trong tình trạng ban đầu, người mua chịu trách nhiệm về bất kỳ tổn thất nào về giá trị.
                                       </p>
                                     </td>
                                   </tr>
