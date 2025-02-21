@@ -31,22 +31,9 @@ app.use((req, res, next) => {
 });
 
 // CORS Configuration
-const corsOptions = {
-  origin: [
-    "http://localhost:3001",
-    "http://localhost:5000",
-    "http://localhost:5173",
-    "https://drstore-admin.vercel.app",
-    "https://sugar-cake.vercel.app",
-    "https://sugar-cake-admin.vercel.app/",
-  ],
-  methods: ["GET", "POST", "PATCH", "DELETE", "PUT"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true,
-};
 
-app.use(cors(corsOptions));
-app.options("*", cors(corsOptions));
+app.use(cors());
+app.options("*", cors());
 
 app.use(morgan("dev"));
 app.use(bodyParser.json());
