@@ -37,7 +37,7 @@ const corsOptions = {
     "http://localhost:5000",
     "http://localhost:5173",
     "https://drstore-admin.vercel.app",
-    "https://sugar-cake-admin.vercel.app/",
+    "https://sugar-cake-admin.vercel.app",
     "https://sugar-cake.vercel.app",
   ],
   methods: ["GET", "POST", "PATCH", "DELETE", "PUT"],
