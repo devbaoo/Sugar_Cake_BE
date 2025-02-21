@@ -19,32 +19,30 @@ const app = express();
 // db connect
 dbconnect();
 app.get("/", function (req, res) {
-	res.send("server is running....,");
+  res.send("server is running....,");
 });
 
 app.use((req, res, next) => {
-	res.header(
-		"Access-Control-Allow-Origin",
-		"https://sugar-cake.vercel.app"
-	);
-	res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
-	res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-	res.header("Access-Control-Allow-Credentials", "true");
-	next();
+  res.header("Access-Control-Allow-Origin", "https://sugar-cake.vercel.app");
+  res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  res.header("Access-Control-Allow-Credentials", "true");
+  next();
 });
 
 // CORS Configuration
 const corsOptions = {
-	origin: [
-		"http://localhost:3001",
-		"http://localhost:5000",
-		"http://localhost:5173",
-		"https://drstore-admin.vercel.app",
-		"https://sugar-cake.vercel.app",
-	],
-	methods: ["GET", "POST", "PATCH", "DELETE", "PUT"],
-	allowedHeaders: ["Content-Type", "Authorization"],
-	credentials: true,
+  origin: [
+    "http://localhost:3001",
+    "http://localhost:5000",
+    "http://localhost:5173",
+    "https://drstore-admin.vercel.app",
+    "https://sugar-cake.vercel.app",
+    "https://sugar-cake-admin.vercel.app/",
+  ],
+  methods: ["GET", "POST", "PATCH", "DELETE", "PUT"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
 };
 
 app.use(cors(corsOptions));
@@ -66,11 +64,8 @@ app.use("/api/contact", contactRoute);
 app.use("/api/upload", uploadRoute);
 app.use("/api/payment", paymentRoute);
 
-
-
-
 const port = process.env.PORT || 5004; // fall back to 5004 if no PORT env var is set
 
 app.listen(port, () => {
-	console.log(`Server is running on port ${port}`);
+  console.log(`Server is running on port ${port}`);
 });
