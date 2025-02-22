@@ -435,7 +435,7 @@ export const orderMail = (userName) => {
                                       ">
                                       <a
                                         target="_blank"
-                                        href="http://localhost:5173"
+                                        href="https://www.sugarsilkcake.com/"
                                         style="
                                           mso-line-height-rule: exactly;
                                           text-decoration: underline;
@@ -512,7 +512,7 @@ export const orderMail = (userName) => {
                                           mso-border-alt: 10px;
                                         "
                                         ><a
-                                          href="http://localhost:5173/contact"
+                                          href="hhttps://www.facebook.com/profile.php?id=61572595452554"
                                           class="es-button"
                                           target="_blank"
                                           style="
@@ -867,7 +867,7 @@ export const orderMail = (userName) => {
                                           mso-border-alt: 10px;
                                         "
                                         ><a
-                                          href="http://localhost:5173/my-orders"
+                                          href="https://www.sugarsilkcake.com/my-orders"
                                           class="es-button es-button-9020"
                                           target="_blank"
                                           style="
@@ -1642,7 +1642,7 @@ export const orderMail = (userName) => {
                                             color: #6a994e;
                                             font-size: 12px;
                                           "
-                                          href="http://localhost:5173/privacy-policy"
+                                          href="https://sugar-cake.vercel.app/privacy-policy"
                                           >Privacy
                                           Policy</a
                                         >
@@ -1655,7 +1655,7 @@ export const orderMail = (userName) => {
                                             color: #6a994e;
                                             font-size: 12px;
                                           "
-                                          href="http://localhost:5173/contact"
+                                          href="https://www.facebook.com/profile.php?id=61572595452554"
                                           >Unsubscribe</a
                                         >
                                       </p>

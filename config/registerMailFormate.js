@@ -402,7 +402,7 @@ export const registerMail = (userName, id) => {
                                       ">
                                       <a
                                         target="_blank"
-                                        href="http://localhost:5173/"
+                                        href="https://www.sugarsilkcake.com/"
                                         style="
                                           -webkit-text-size-adjust: none;
                                           -ms-text-size-adjust: none;
@@ -623,7 +623,7 @@ export const registerMail = (userName, id) => {
                                           mso-hide: all;
                                         "
                                         ><a
-                                          href="http://localhost:5173/verify/${id}"
+                                          href="https://www.sugarsilkcake.com/verify/${id}"
                                           class="es-button msohide"
                                           target="_blank"
                                           style="
@@ -891,7 +891,7 @@ export const registerMail = (userName, id) => {
                                             ">
                                             <a
                                               target="_blank"
-                                              href="http://localhost:5173/"
+                                              href="https://www.sugarsilkcake.com/"
                                               style="
                                                 -webkit-text-size-adjust: none;
                                                 -ms-text-size-adjust: none;
@@ -1006,7 +1006,7 @@ export const registerMail = (userName, id) => {
                                                   color: #2d3142;
                                                   font-size: 16px;
                                                 "
-                                                href="http://localhost:5173/contact"
+                                                href="https://www.facebook.com/profile.php?id=61572595452554"
                                                 >we're
                                                 here
                                                 to
@@ -1145,7 +1145,7 @@ export const registerMail = (userName, id) => {
                                             color: #2d3142;
                                             font-size: 14px;
                                           "
-                                          href="http://localhost:5173/privacy-policy"
+                                          href="https://sugar-cake.vercel.app/privacy-policy"
                                           >Privacy
                                           Policy</a
                                         ><a
@@ -1170,7 +1170,7 @@ export const registerMail = (userName, id) => {
                                             color: #2d3142;
                                             font-size: 14px;
                                           "
-                                          href="http://localhost:5173/contact"
+                                          href="https://www.facebook.com/profile.php?id=61572595452554"
                                           >Unsubscribe</a
                                         >
                                       </p>
@@ -1212,7 +1212,7 @@ export const registerMail = (userName, id) => {
                                         ©
                                         2024&nbsp;<a
                                           target="_blank"
-                                          href="http://localhost:5173/"
+                                          href="https://www.sugarsilkcake.com/"
                                           style="
                                             -webkit-text-size-adjust: none;
                                             -ms-text-size-adjust: none;
