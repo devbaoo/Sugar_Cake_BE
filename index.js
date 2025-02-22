@@ -39,6 +39,8 @@ const corsOptions = {
     "https://drstore-admin.vercel.app",
     "https://sugar-cake-admin.vercel.app",
     "https://sugar-cake.vercel.app",
+    "https://www.sugarsilkcake.com",
+    "https://admin.sugarsilkcake.com",
   ],
   methods: ["GET", "POST", "PATCH", "DELETE", "PUT"],
   allowedHeaders: ["Content-Type", "Authorization"],
