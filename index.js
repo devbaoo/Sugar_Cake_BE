@@ -35,6 +35,7 @@ const corsOptions = {
   origin: [
     "http://localhost:3001",
     "http://localhost:5000",
+    "http://localhost:5173",
     "https://www.sugarsilkcake.com/",
     "https://drstore-admin.vercel.app",
     "https://sugar-cake-admin.vercel.app",
