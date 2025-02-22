@@ -415,7 +415,7 @@ export const orderStatusMail = (orderStatus) => {
                                       ">
                                       <a
                                         target="_blank"
-                                        href="http://localhost:5173/"
+                                        href="https://www.sugarsilkcake.com/"
                                         style="
                                           mso-line-height-rule: exactly;
                                           text-decoration: underline;
@@ -625,7 +625,7 @@ export const orderStatusMail = (orderStatus) => {
                                           width: auto;
                                         "
                                         ><a
-                                          href="http://localhost:5173/my-orders"
+                                          href="https://www.sugarsilkcake.com/my-orders"
                                           class="es-button"
                                           target="_blank"
                                           style="
@@ -871,7 +871,7 @@ export const orderStatusMail = (orderStatus) => {
                                           width: auto;
                                         "
                                         ><a
-                                          href="http://localhost:5173/faq"
+                                          href="https://sugar-cake.vercel.app/faq"
                                           class="es-button"
                                           target="_blank"
                                           style="
@@ -930,7 +930,7 @@ export const orderStatusMail = (orderStatus) => {
                                           width: auto;
                                         "
                                         ><a
-                                          href="http://localhost:5173/faq"
+                                          href="https://sugar-cake.vercel.app/faq"
                                           class="es-button"
                                           target="_blank"
                                           style="
@@ -1025,7 +1025,7 @@ export const orderStatusMail = (orderStatus) => {
                                           width: auto;
                                         "
                                         ><a
-                                          href="http://localhost:5173/faq"
+                                          href="http:/https://sugar-cake.vercel.app/faq"
                                           class="es-button"
                                           target="_blank"
                                           style="
@@ -1084,7 +1084,7 @@ export const orderStatusMail = (orderStatus) => {
                                           width: auto;
                                         "
                                         ><a
-                                          href="http://localhost:5173/contact"
+                                          href="https://www.facebook.com/profile.php?id=61572595452554"
                                           class="es-button"
                                           target="_blank"
                                           style="
@@ -1248,7 +1248,7 @@ export const orderStatusMail = (orderStatus) => {
                                             ">
                                             <a
                                               target="_blank"
-                                              href="http://localhost:5173"
+                                              href="https://www.sugarsilkcake.com/"
                                               style="
                                                 mso-line-height-rule: exactly;
                                                 text-decoration: none;
@@ -1295,7 +1295,7 @@ export const orderStatusMail = (orderStatus) => {
                                             id="esd-menu-id-1">
                                             <a
                                               target="_blank"
-                                              href="http://localhost:5173"
+                                              href="https://www.sugarsilkcake.com/"
                                               style="
                                                 mso-line-height-rule: exactly;
                                                 text-decoration: none;
@@ -1342,7 +1342,7 @@ export const orderStatusMail = (orderStatus) => {
                                             id="esd-menu-id-2">
                                             <a
                                               target="_blank"
-                                              href="http://localhost:5173"
+                                              href="https://www.sugarsilkcake.com/"
                                               style="
                                                 mso-line-height-rule: exactly;
                                                 text-decoration: none;
@@ -1495,7 +1495,7 @@ export const orderStatusMail = (orderStatus) => {
                                             color: #a0937d;
                                             font-size: 12px;
                                           "
-                                          href="http://localhost:5173/privacy-policy"
+                                          href="https://sugar-cake.vercel.app/privacy-policy"
                                           >Privacy
                                           policy</a
                                         >
@@ -1508,7 +1508,7 @@ export const orderStatusMail = (orderStatus) => {
                                             color: #a0937d;
                                             font-size: 12px;
                                           "
-                                          href="http://localhost:5173/contact"
+                                          href="https://www.facebook.com/profile.php?id=61572595452554"
                                           >Unsubscribe</a
                                         >
                                       </p>

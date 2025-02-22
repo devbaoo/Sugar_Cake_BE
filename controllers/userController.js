@@ -452,7 +452,6 @@ export const userCart = async (req, res) => {
 		let newCart = await new Cart({
 			userId: _id,
 			productId,
-			color,
 			quantity,
 			price,
 		}).save();
