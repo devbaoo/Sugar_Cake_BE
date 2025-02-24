@@ -583,9 +583,15 @@ export const getUserOrder = async (req, res) => {
 	try {
 		const { _id } = req.user;
 		validateUserId(_id);
-		const userOrder = await Order.find({ user: _id })
+
+		// Tìm các đơn hàng có status là PENDING hoặc PAID
+		const userOrder = await Order.find({
+			user: _id,
+			status: { $in: ["PENDING", "PAID"] }
+		})
 			.populate("user")
 			.populate("orderItems.product");
+
 		res.status(200).json({ userOrder });
 	} catch (error) {
 		console.log(error);
