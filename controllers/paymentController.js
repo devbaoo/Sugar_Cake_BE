@@ -2,11 +2,14 @@ import axios from "axios";
 import crypto from "crypto";
 import { Order } from "../models/orderModel.js";
 import "dotenv/config";
+import mongoose from 'mongoose';
+
 
 const PAYOS_API_URL = "https://api-merchant.payos.vn";
 
 const createSignature = (data, checksumKey) => {
     const signData = Object.keys(data)
+        .filter(key => key !== 'signature') // Loại bỏ signature cũ
         .sort()
         .map(key => `${key}=${data[key]}`)
         .join('&');
@@ -16,6 +19,8 @@ const createSignature = (data, checksumKey) => {
         .update(signData)
         .digest('hex');
 };
+
+
 
 export const checkout = async (req, res) => {
     const { orderId } = req.body;
@@ -40,6 +45,8 @@ export const checkout = async (req, res) => {
 
         // Tạo signature
         paymentData.signature = createSignature(paymentData, process.env.Checksum_Key);
+        console.log("Payment Data:", paymentData);
+        console.log("Payment Signature:", paymentData.signature);
 
         try {
             // Gọi API PAYOS
@@ -84,45 +91,72 @@ export const checkout = async (req, res) => {
 };
 
 export const paymentVerification = async (req, res) => {
+    const ObjectId = mongoose.Types.ObjectId;
+
     try {
-        const { signature, order } = req.body;
+        const { signature, order, paymentMethod } = req.body;
 
+        // Nếu là COD, cập nhật đơn hàng ngay
+        if (paymentMethod === 'COD') {
+            // Kiểm tra xem order.orderCode có phải ObjectId hợp lệ không
+            if (!ObjectId.isValid(order.orderCode)) {
+                return res.status(400).json({ success: false, message: "Invalid order ID" });
+            }
 
-        const calculatedSignature = createSignature(order, process.env.Checksum_Key);
+            const orderUpdate = await Order.findOneAndUpdate(
+                { _id: new ObjectId(order.orderCode) }, // 🔹 Tìm bằng _id thay vì orderCode
+                {
+                    orderStatus: "COD",
+                    'paymentInfo.payosPaymentId': 'COD',
+                },
+                { new: true }
+            );
 
-        if (calculatedSignature !== signature) {
-            return res.status(400).json({
-                success: false,
-                message: "Invalid signature"
-            });
+            if (!orderUpdate) {
+                return res.status(404).json({ success: false, message: "Order not found" });
+            }
+
+            return res.json({ success: true, order: orderUpdate });
         }
 
+        // 🔹 **Chỉ lấy dữ liệu trong order để ký**
+        const dataToSign = {
+            orderCode: order.orderCode,
+            status: order.status,
+            paymentId: order.paymentId
+        };
 
-        const orderUpdate = await Order.findByIdAndUpdate(
-            order.orderCode,
+        // 🔹 **Tạo lại chữ ký**
+        const responseSignature = createSignature(dataToSign, process.env.Checksum_Key);
+
+        console.log("Recomputed Signature:", responseSignature);
+        console.log("PAYOS Signature:", signature);
+
+        // 🔴 **Kiểm tra chữ ký**
+        if (responseSignature !== signature) {
+            return res.status(400).json({ success: false, message: "Invalid signature" });
+        }
+
+        // 🔹 **Cập nhật trạng thái đơn hàng**
+        const orderUpdate = await Order.findOneAndUpdate(
+            { _id: new ObjectId(order.orderCode) }, // Ép kiểu về ObjectId
             {
                 orderStatus: order.status === "PAID" ? "Paid" : "Failed",
+                'paymentInfo.payosPaymentId': order.status === "PAID" ? order.paymentId : 'FAILED',
                 paidAt: new Date()
             },
             { new: true }
         );
 
         if (!orderUpdate) {
-            return res.status(404).json({
-                success: false,
-                message: "Order not found"
-            });
+            return res.status(404).json({ success: false, message: "Order not found" });
         }
 
-        res.json({
-            success: true,
-            order: orderUpdate
-        });
+        res.json({ success: true, order: orderUpdate });
+
     } catch (error) {
         console.log(error);
-        res.status(500).json({
-            success: false,
-            error: error.message
-        });
+        res.status(500).json({ success: false, error: error.message });
     }
 };
+
