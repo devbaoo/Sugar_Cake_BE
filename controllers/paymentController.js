@@ -2,11 +2,13 @@ import axios from "axios";
 import crypto from "crypto";
 import { Order } from "../models/orderModel.js";
 import "dotenv/config";
-import mongoose from 'mongoose';
-
+import mongoose from "mongoose";
 
 const PAYOS_API_URL = "https://api-merchant.payos.vn";
 
+/**
+ * 🔹 Tạo chữ ký (signature) để bảo mật dữ liệu gửi đi.
+ */
 const createSignature = (data, checksumKey) => {
     const signData = Object.keys(data)
         .filter(key => key !== 'signature') // Loại bỏ signature cũ
@@ -14,14 +16,12 @@ const createSignature = (data, checksumKey) => {
         .map(key => `${key}=${data[key]}`)
         .join('&');
 
-    return crypto
-        .createHmac('sha256', checksumKey)
-        .update(signData)
-        .digest('hex');
+    return crypto.createHmac('sha256', checksumKey).update(signData).digest('hex');
 };
 
-
-
+/**
+ * ✅ API: Checkout - Tạo thanh toán
+ */
 export const checkout = async (req, res) => {
     const { orderId } = req.body;
     try {
@@ -31,27 +31,30 @@ export const checkout = async (req, res) => {
             return res.status(404).json({ success: false, message: "Order not found" });
         }
 
-        // 🔹 Tạo mã đơn hàng hợp lệ
-        const orderCode = Math.floor(Math.random() * 1000000000); // Số ngẫu nhiên 9 chữ số
-        const paymentId = order._id.toString(); // Lấy `_id` làm mã thanh toán
+        // ✅ **Tạo `orderCode` nếu chưa có**
+        if (!order.orderCode) {
+            order.orderCode = parseInt(order._id.toString().slice(-10), 16) % 9007199254740991;
+            await order.save(); // Lưu lại `orderCode`
+        }
 
-        // 🔹 Tạo dữ liệu để ký
+        // 🔹 Chuẩn bị dữ liệu thanh toán
+        const paymentId = order.orderCode;
+        const description = `Thanh toán đơn ${order.orderCode.toString().slice(-6)}`.slice(0, 25);
+
         const paymentData = {
-            orderCode,
+            orderCode: order.orderCode,
             amount: order.priceAfterDiscount || order.totalPrice,
-            description: `Thanh toán đơn ${order._id.toString().slice(-6)}`,
+            description
         };
 
-        // 🔹 Tạo chữ ký
+        // 🔹 Tạo chữ ký bảo mật
         const cancelSignature = createSignature(paymentData, process.env.Checksum_Key);
 
-        // 🔹 `cancelUrl` với đầy đủ thông tin
-        const cancelUrl = `${process.env.FRONTEND_URL}/cancel?orderCode=${orderCode}&id=${paymentId}&status=CANCELLED&signature=${cancelSignature}`;
+        // 🔹 Tạo URL thanh toán
+        const cancelUrl = `${process.env.FRONTEND_URL}/cancel?orderCode=${order.orderCode}&id=${paymentId}&status=CANCELLED&signature=${cancelSignature}`;
+        const returnUrl = `${process.env.FRONTEND_URL}/success?orderCode=${order.orderCode}&id=${paymentId}&status=PAID&signature=${cancelSignature}`;
 
-        // 🔹 `returnUrl` với đầy đủ thông tin
-        const returnUrl = `${process.env.FRONTEND_URL}/success?orderCode=${orderCode}&id=${paymentId}&status=PAID&signature=${cancelSignature}`;
-
-        // 🔹 Tạo chữ ký toàn bộ dữ liệu
+        // 🔹 Ký dữ liệu trước khi gửi
         const finalPaymentData = { ...paymentData, cancelUrl, returnUrl };
         finalPaymentData.signature = createSignature(finalPaymentData, process.env.Checksum_Key);
 
@@ -83,8 +86,9 @@ export const checkout = async (req, res) => {
     }
 };
 
-
-
+/**
+ * ✅ API: Payment Verification - Xác minh thanh toán từ PAYOS
+ */
 export const paymentVerification = async (req, res) => {
     const ObjectId = mongoose.Types.ObjectId;
 
@@ -93,9 +97,10 @@ export const paymentVerification = async (req, res) => {
 
         // ✅ **Nếu là COD, cập nhật ngay đơn hàng**
         if (paymentMethod === 'COD') {
-            const filter = ObjectId.isValid(order.orderCode)
-                ? { _id: new ObjectId(order.orderCode) }
-                : { orderCode: order.orderCode };
+            const filter = { $or: [{ orderCode: order.orderCode }] };
+            if (ObjectId.isValid(order.orderCode)) {
+                filter.$or.push({ _id: new ObjectId(order.orderCode) });
+            }
 
             const orderUpdate = await Order.findOneAndUpdate(
                 filter,
@@ -130,25 +135,22 @@ export const paymentVerification = async (req, res) => {
             return res.status(400).json({ success: false, message: "Invalid signature" });
         }
 
-        // ✅ **Tìm đơn hàng theo `orderCode` hoặc `_id`**
-        const filter = ObjectId.isValid(order.orderCode)
-            ? { _id: new ObjectId(order.orderCode) }
-            : { orderCode: order.orderCode };
+        // ✅ **Tìm đơn hàng theo `orderCode` trước, nếu không có thì tìm bằng `_id`**
+        let orderUpdate = await Order.findOne({ orderCode: order.orderCode });
 
-        // ✅ **Cập nhật trạng thái đơn hàng**
-        const orderUpdate = await Order.findOneAndUpdate(
-            filter,
-            {
-                orderStatus: order.status === "PAID" ? "Paid" : "Failed",
-                'paymentInfo.payosPaymentId': order.status === "PAID" ? order.paymentId : 'FAILED',
-                paidAt: new Date()
-            },
-            { new: true }
-        );
+        if (!orderUpdate && ObjectId.isValid(order.orderCode)) {
+            orderUpdate = await Order.findById(order.orderCode);
+        }
 
         if (!orderUpdate) {
             return res.status(404).json({ success: false, message: "Order not found" });
         }
+
+        // ✅ **Cập nhật trạng thái đơn hàng**
+        orderUpdate.orderStatus = order.status === "PAID" ? "Paid" : "Failed";
+        orderUpdate.paymentInfo.payosPaymentId = order.status === "PAID" ? order.paymentId : "FAILED";
+        orderUpdate.paidAt = new Date();
+        await orderUpdate.save();
 
         res.json({ success: true, order: orderUpdate });
 
