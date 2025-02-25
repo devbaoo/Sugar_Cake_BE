@@ -50,19 +50,21 @@ export const uploadPhoto = multer({
 
 export const productImgResize = async (req, res, next) => {
 	if (!req.files) return next();
-
-	await Promise.all(
-		req.files.map(async (file) => {
-			const outputFilename = `${file.fieldname}-${Date.now()}.jpeg`;
-			await sharp(file.path)
-				.resize(300, 300)
-				.toFormat("jpeg")
-				.jpeg({ quality: 90 })
-				.toFile(
-					path.join(__dirname, "../public/images/products", outputFilename)
-				);
-		})
-	);
-
+	console.log("req.files", req.files),
+		await Promise.all(
+			req.files.map(async (file) => {
+				// console.log("file", file);
+				const outputFilename = `${file.fieldname}-${Date.now()}.jpeg`; // Create a unique filename
+				await sharp(file.path)
+					.resize(300, 300)
+					.toFormat("jpeg")
+					.jpeg({ quality: 90 }) // 90% quality
+					// .toFile(path.join(`/public/images/products/${file.filename}`));
+					// .toFile(/public/images/products/${file.filename}`);
+					.toFile(
+						path.join(__dirname, "../public/images/products", outputFilename)
+					);
+			})
+		);
 	next();
 };

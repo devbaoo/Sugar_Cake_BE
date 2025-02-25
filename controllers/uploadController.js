@@ -2,38 +2,27 @@ import {
 	cloudinaryImgDelete,
 	cloudinaryImgUpload,
 } from "../utils/cloudinary.js";
-import fs from "fs/promises";
-import fsSync from "fs";
+import fs from "fs";
 import { validateUserId } from "../utils/validateUserId.js";
 
 // image upload
 
 export const uploadImages = async (req, res) => {
 	try {
-		const uploader = (path) => cloudinaryImgUpload(path);
+		const uploader = (path) => cloudinaryImgUpload(path, "images");
 		const urls = [];
 		const files = req.files;
-
-		const uploadPromises = files.map(async (file) => {
+		for (const file of files) {
 			const { path } = file;
 			const newPath = await uploader(path);
 			urls.push(newPath);
-
-			if (fsSync.existsSync(path)) {
-				try {
-					await fs.unlink(path);
-				} catch (unlinkError) {
-					console.error(`Failed to delete file: ${path}`, unlinkError);
-				}
-			}
+			// fs.unlinkSync(path);
+			// console.log("PATH: ", path)
+		}
+		const images = urls.map((file) => {
+			return file;
 		});
-
-		await Promise.all(uploadPromises);
-
-		res.json({
-			success: true,
-			images: urls
-		});
+		res.json(images);
 	} catch (error) {
 		console.log(error);
 		res.status(500).json({ error: "Internal Server Error" });

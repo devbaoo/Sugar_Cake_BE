@@ -9,7 +9,7 @@ router.post(
 	"/",
 	auth,
 	isAdmin,
-	uploadPhoto.array("images", 10), // Cho phép upload tối đa 10 ảnh
+	uploadPhoto.array("images", 10),
 	productImgResize,
 	uploadImages
 );
