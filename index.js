@@ -10,6 +10,7 @@ import colorRoute from "./routes/colorRoute.js";
 import contactRoute from "./routes/contactRoute.js";
 import paymentRoute from "./routes/paymentRoute.js";
 import uploadRoute from "./routes/uploadRoute.js";
+import blogRoute from "./routes/blogRoute.js";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import morgan from "morgan";
@@ -66,6 +67,7 @@ app.use("/api/color", colorRoute);
 app.use("/api/contact", contactRoute);
 app.use("/api/upload", uploadRoute);
 app.use("/api/payment", paymentRoute);
+app.use("/api/blog", blogRoute);
 
 const port = process.env.PORT || 5004; // fall back to 5004 if no PORT env var is set
 
