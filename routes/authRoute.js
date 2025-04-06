@@ -26,6 +26,7 @@ import {
 	userCart,
 	userLogin,
 	verifyEmail,
+	exportOrdersToExcel,
 } from "../controllers/userController.js";
 import { auth, isAdmin } from "../middlewares/authMiddleware.js";
 // import {
@@ -52,6 +53,7 @@ router.put("/address", auth, saveAddress);
 router.get("/all-users", auth, isAdmin, getAllUsers);
 router.get("/get-orders", auth, getUserOrder);
 router.get("/all-orders", auth, isAdmin, getAllOrder);
+router.get("/orders/export",auth, isAdmin, exportOrdersToExcel);
 router.get("/refresh", refreshTokenHandler);
 router.get("/logout", logOut);
 router.get("/wishlist", auth, getWishlist);
