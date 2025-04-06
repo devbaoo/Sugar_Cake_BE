@@ -19,7 +19,7 @@ let orderSchema = new mongoose.Schema(
 		paymentInfo: {
 			payosOrderId: { type: String, required: false },
 			payosPaymentId: { type: String, required: false },
-			signature: { type: String, required: false }, // ✅ Lưu chữ ký ban đầu
+			signature: { type: String, required: false }, 
 		},
 		orderItems: [
 			{
@@ -34,11 +34,9 @@ let orderSchema = new mongoose.Schema(
 		priceAfterDiscount: { type: Number, required: true },
 		orderStatus: { type: String, default: "Ordered" },
 
-		// ✅ Thêm `orderCode` & `paymentId`
 		orderCode: { type: Number, unique: true, sparse: true },
 		paymentId: { type: String, unique: true, sparse: true },
 
-		// ✅ Thêm `status` để theo dõi trạng thái đơn hàng
 		status: { type: String, default: "PENDING" },
 	},
 	{ timestamps: true }
